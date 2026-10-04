@@ -1,0 +1,41 @@
+{
+  "title": "DevOps Workshop — Grade Predictor",
+  "schemaVersion": 39,
+  "version": 1,
+  "refresh": "5s",
+  "panels": [
+    {
+      "title": "Requests / second",
+      "type": "timeseries",
+      "gridPos": {"h": 8, "w": 12, "x": 0, "y": 0},
+      "targets": [
+        {
+          "expr": "rate(grade_api_requests_total[1m])",
+          "legendFormat": "{{method}} {{endpoint}}"
+        }
+      ]
+    },
+    {
+      "title": "Predictions by grade",
+      "type": "timeseries",
+      "gridPos": {"h": 8, "w": 12, "x": 12, "y": 0},
+      "targets": [
+        {
+          "expr": "rate(grade_api_predictions_total[1m])",
+          "legendFormat": "{{grade_letter}}"
+        }
+      ]
+    },
+    {
+      "title": "Request latency",
+      "type": "timeseries",
+      "gridPos": {"h": 8, "w": 24, "x": 0, "y": 8},
+      "targets": [
+        {
+          "expr": "rate(grade_api_request_latency_seconds_sum[1m]) / rate(grade_api_request_latency_seconds_count[1m])",
+          "legendFormat": "{{method}} {{endpoint}}"
+        }
+      ]
+    }
+  ]
+}
