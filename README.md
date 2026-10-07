@@ -3,7 +3,9 @@
 A 3-hour, project-focused DevOps workshop for 3rd/4th-year students, especially Data Science students.
 
 > **👋 Student?** Start with [`workshop/student-setup.md`](workshop/student-setup.md) — complete the setup **before** you arrive.  
-> Reference snippets (Dockerfile, CI workflow, docker-compose) are in the [Obscura Reference Snippets gist](https://gist.github.com/aftab-s/11db55af5a3c3535030e3eeff82a610b).
+> 🎮 **Live Demo:** [https://beyond-code-beta.onrender.com](https://beyond-code-beta.onrender.com)  
+> 📊 **Workshop Slides:** [https://canva.link/bftq3j82oegb38n](https://canva.link/bftq3j82oegb38n)  
+> 📝 **Reference Snippets:** [Obscura Reference Snippets gist](https://gist.github.com/aftab-s/11db55af5a3c3535030e3eeff82a610b)
 
 ---
 
@@ -17,7 +19,7 @@ The workshop deliberately avoids Kubernetes and cloud-account setup so that most
 
 ## What you'll build
 
-A FastAPI service that predicts your grade based on your study habits — and roasts you in the process.
+A FastAPI service that predicts your grade based on your study habits — and roasts you in the process. Try the live version at [https://beyond-code-beta.onrender.com](https://beyond-code-beta.onrender.com).
 
 Enter your study hours, attendance, assignments completed, and previous grade.
 Get a predicted grade, a letter grade, and a brutally honest tip.
