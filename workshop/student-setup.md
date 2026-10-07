@@ -211,3 +211,50 @@ services:
     depends_on:
       - prometheus
 ```
+
+### Manually pushing to Docker Hub
+
+Use these commands if you want to push the image yourself without relying on CI.
+
+**1. Log in to Docker Hub**
+
+```bash
+docker login
+```
+
+You will be prompted for your Docker Hub username and password (or a personal access token).
+
+**2. Build the image**
+
+```bash
+docker build -t <your-dockerhub-username>/grade-predictor:latest .
+```
+
+Replace `<your-dockerhub-username>` with your actual Docker Hub username.
+
+**3. (Optional) Tag with a specific version**
+
+```bash
+docker tag <your-dockerhub-username>/grade-predictor:latest <your-dockerhub-username>/grade-predictor:<version>
+```
+
+For example, using a Git commit SHA:
+
+```bash
+docker tag <your-dockerhub-username>/grade-predictor:latest \
+  <your-dockerhub-username>/grade-predictor:$(git rev-parse --short HEAD)
+```
+
+**4. Push the image**
+
+```bash
+# Push the latest tag
+docker push <your-dockerhub-username>/grade-predictor:latest
+
+# Push the versioned tag (if you created one)
+docker push <your-dockerhub-username>/grade-predictor:<version>
+```
+
+**5. Verify**
+
+Open `https://hub.docker.com/r/<your-dockerhub-username>/grade-predictor` in your browser to confirm the image appears under **Tags**.
